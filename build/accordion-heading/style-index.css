@@ -1,16 +1,22 @@
 /*!*********************************************************************************************************************************************************************************************************************************************************!*\
   !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[3].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[3].use[2]!./node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[3].use[3]!./src/accordion-heading/style.scss ***!
   \*********************************************************************************************************************************************************************************************************************************************************/
-/**
- * The following styles get applied both on the front of your site
- * and in the editor.
- *
- * Replace them with your own styles or remove the file completely.
- */
-.wp-block-create-block-accordion-heading {
-  background-color: #21759b;
-  color: #fff;
-  padding: 2px;
+.wp-block-themezee-accordion-heading {
+  display: flex;
+  flex-wrap: nowrap;
+  align-items: center;
+}
+.wp-block-themezee-accordion-heading.is-layout-flex {
+  gap: 0.5em;
+}
+.wp-block-themezee-accordion-heading > h1,
+.wp-block-themezee-accordion-heading > h2,
+.wp-block-themezee-accordion-heading > h3,
+.wp-block-themezee-accordion-heading > h4,
+.wp-block-themezee-accordion-heading > h5,
+.wp-block-themezee-accordion-heading > h6 {
+  margin-top: 0;
+  margin-bottom: 0;
 }
 
 /*# sourceMappingURL=style-index.css.map*/

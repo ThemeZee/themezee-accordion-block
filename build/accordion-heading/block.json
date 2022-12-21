@@ -7,7 +7,42 @@
   "category": "themezee-blocks",
   "description": "Displays the accordion heading.",
   "supports": {
-    "html": false
+    "align": false,
+    "__experimentalExposeControlsToChildren": true,
+    "__experimentalLayout": {
+      "allowSwitching": false,
+      "allowInheriting": false,
+      "default": {
+        "type": "flex",
+        "flexWrap": "nowrap"
+      }
+    },
+    "color": {
+      "gradients": true,
+      "link": true,
+      "__experimentalDefaultControls": {
+        "text": true,
+        "background": true,
+        "link": false
+      }
+    },
+    "spacing": {
+      "margin": [
+        "top",
+        "bottom"
+      ],
+      "padding": true,
+      "blockGap": true,
+      "__experimentalDefaultControls": {
+        "blockGap": true
+      }
+    },
+    "__experimentalBorder": {
+      "color": true,
+      "style": true,
+      "width": true,
+      "radius": true
+    }
   },
   "textdomain": "themezee-accordion-block",
   "editorScript": "file:./index.js",

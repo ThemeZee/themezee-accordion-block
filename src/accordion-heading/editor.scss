@@ -1,9 +1,12 @@
-/**
- * The following styles get applied inside the editor only.
- *
- * Replace them with your own styles or remove the file completely.
- */
-
-.wp-block-create-block-accordion-heading {
-	border: 1px dotted #f00;
+.editor-styles-wrapper {
+	.wp-block-themezee-accordion-heading {
+		.wp-block-heading {
+			margin-top: 0;
+			margin-bottom: 0;
+		}
+	
+		&.is-layout-flex {
+			gap: 0.5em;
+		}
+	}
 }

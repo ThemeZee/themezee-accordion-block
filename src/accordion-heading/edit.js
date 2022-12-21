@@ -1,38 +1,43 @@
 /**
- * Retrieves the translation of text.
- *
- * @see https://developer.wordpress.org/block-editor/reference-guides/packages/packages-i18n/
+ * WordPress dependencies
  */
 import { __ } from '@wordpress/i18n';
+import {
+	useBlockProps,
+	useInnerBlocksProps,
+} from '@wordpress/block-editor';
 
 /**
- * React hook that is used to mark the block wrapper element.
- * It provides all the necessary props like the class name.
- *
- * @see https://developer.wordpress.org/block-editor/reference-guides/packages/packages-block-editor/#useblockprops
- */
-import { useBlockProps } from '@wordpress/block-editor';
-
-/**
- * Lets webpack process CSS, SASS or SCSS files referenced in JavaScript files.
- * Those files can contain any CSS code that gets applied to the editor.
- *
- * @see https://www.npmjs.com/package/@wordpress/scripts#using-css
+ * Internal dependencies
  */
 import './editor.scss';
 
-/**
- * The edit function describes the structure of your block in the context of the
- * editor. This represents what the editor will render when the block is used.
- *
- * @see https://developer.wordpress.org/block-editor/reference-guides/block-api/block-edit-save/#edit
- *
- * @return {WPElement} Element to render.
- */
-export default function Edit() {
+export default function Edit( { attributes } ) {
+	const { layout = {} } = attributes;
+	const blockProps = useBlockProps();
+	const innerBlocksProps = useInnerBlocksProps( blockProps, {
+		template: [ 
+			[ 'themezee/icon', {
+				iconName: "chevronDown",
+				iconLibrary: "wordpress",
+				iconSVG: '<svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M17.5 11.6L12 16l-5.5-4.4.9-1.2L12 14l4.5-3.6 1 1.2z"></path></svg>',
+				iconWidth: "36px",
+				iconHeight: "36px",
+			} ],
+			[ 'core/heading', {
+				level: 3,
+				placeholder: __( 'Accordion Heading', 'themezee-accordion-block' ),
+			} ] 
+		],
+		__experimentalLayout: layout,
+		renderAppender: false,
+	} );
+
 	return (
-		<p { ...useBlockProps() }>
-			{ __( 'Accordion Heading – hello from the editor!', 'accordion-heading' ) }
-		</p>
+		<>
+			<div { ...innerBlocksProps }>
+				{ innerBlocksProps.children }
+			</div>
+		</>
 	);
 }
