@@ -30,6 +30,7 @@ export default function Edit( { attributes } ) {
 			} ]
 		],
 		__experimentalLayout: layout,
+		orientation: "horizontal",
 		renderAppender: false,
 	} );
 

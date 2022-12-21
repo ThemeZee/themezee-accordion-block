@@ -50,6 +50,7 @@ function Edit(_ref) {
       iconHeight: "36px"
     }]],
     __experimentalLayout: layout,
+    orientation: "horizontal",
     renderAppender: false
   });
   return (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", innerBlocksProps, innerBlocksProps.children));
