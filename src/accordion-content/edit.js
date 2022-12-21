@@ -16,7 +16,9 @@ export default function Edit( { attributes } ) {
 	const blockProps = useBlockProps();
 	const innerBlocksProps = useInnerBlocksProps( blockProps, {
 		template: [ 
-			[ 'core/paragraph', {} ] 
+			[ 'core/paragraph', {
+				placeholder: __( 'Add accordion content', 'themezee-accordion-block' ),
+			} ] 
 		]
 	} );
 
