@@ -5,6 +5,9 @@
   "version": "1.0",
   "title": "Accordion Heading",
   "category": "themezee-blocks",
+  "parent": [
+    "themezee/accordion"
+  ],
   "description": "Displays the accordion heading.",
   "supports": {
     "align": false,

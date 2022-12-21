@@ -5,9 +5,35 @@
   "version": "1.0",
   "title": "Accordion Content",
   "category": "themezee-blocks",
+  "parent": [
+    "themezee/accordion"
+  ],
   "description": "Displays the accordion content.",
   "supports": {
-    "html": false
+    "align": false,
+    "color": {
+      "gradients": true,
+      "link": true,
+      "__experimentalDefaultControls": {
+        "text": true,
+        "background": true,
+        "link": false
+      }
+    },
+    "spacing": {
+      "margin": true,
+      "padding": true,
+      "blockGap": true,
+      "__experimentalDefaultControls": {
+        "padding": true
+      }
+    },
+    "__experimentalBorder": {
+      "color": true,
+      "style": true,
+      "width": true,
+      "radius": true
+    }
   },
   "textdomain": "themezee-accordion-block",
   "editorScript": "file:./index.js",
