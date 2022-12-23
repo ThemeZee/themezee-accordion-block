@@ -1,0 +1,65 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "apiVersion": 2,
+  "name": "themezee/accordion-icon",
+  "version": "1.0",
+  "title": "Accordion Icon",
+  "category": "themezee-blocks",
+  "parent": [
+    "themezee/accordion-heading"
+  ],
+  "description": "Displays the accordion icon.",
+  "attributes": {
+    "iconName": {
+      "type": "string"
+    },
+    "iconSVG": {
+      "type": "string",
+      "source": "html",
+      "selector": "figure",
+      "default": ""
+    },
+    "iconWidth": {
+      "type": "string",
+      "default": "48px"
+    },
+    "iconHeight": {
+      "type": "string",
+      "default": "48px"
+    }
+  },
+  "supports": {
+    "align": false,
+    "html": false,
+    "color": {
+      "__experimentalSkipSerialization": true,
+      "gradients": true,
+      "__experimentalDefaultControls": {
+        "text": true,
+        "background": true
+      }
+    },
+    "spacing": {
+      "__experimentalSkipSerialization": true,
+      "margin": true,
+      "padding": true,
+      "__experimentalDefaultControls": {
+        "padding": true
+      }
+    },
+    "__experimentalBorder": {
+      "color": true,
+      "style": true,
+      "width": true,
+      "radius": true,
+      "__experimentalSkipSerialization": true,
+      "__experimentalDefaultControls": {
+        "radius": true
+      }
+    }
+  },
+  "textdomain": "themezee-accordion-block",
+  "editorScript": "file:./index.js",
+  "editorStyle": "file:./index.css",
+  "style": "file:./style-index.css"
+}

@@ -36,6 +36,11 @@ function register_themezee_accordion_block() {
 		'description' => _x( 'Displays the accordion heading.', 'block description', 'themezee-accordion-block' ),
 	] );
 
+	register_block_type( __DIR__ . '/build/accordion-icon', [
+		'title'       => _x( 'Accordion Icon', 'block title', 'themezee-accordion-block' ),
+		'description' => _x( 'Displays the accordion icon.', 'block description', 'themezee-accordion-block' ),
+	] );
+
 	register_block_type( __DIR__ . '/build/accordion-content', [
 		'title'       => _x( 'Accordion Content', 'block title', 'themezee-accordion-block' ),
 		'description' => _x( 'Displays the accordion content.', 'block description', 'themezee-accordion-block' ),
@@ -44,6 +49,7 @@ function register_themezee_accordion_block() {
 	// Load translation for JS files.
 	wp_set_script_translations( 'themezee-accordion-editor-script', 'themezee-accordion-block', plugin_dir_path( __FILE__ ) . 'languages' );
 	wp_set_script_translations( 'themezee-accordion-heading-editor-script', 'themezee-accordion-block', plugin_dir_path( __FILE__ ) . 'languages' );
+	wp_set_script_translations( 'themezee-accordion-icon-editor-script', 'themezee-accordion-block', plugin_dir_path( __FILE__ ) . 'languages' );
 	wp_set_script_translations( 'themezee-accordion-content-editor-script', 'themezee-accordion-block', plugin_dir_path( __FILE__ ) . 'languages' );
 }
 add_action( 'init', 'register_themezee_accordion_block' );
