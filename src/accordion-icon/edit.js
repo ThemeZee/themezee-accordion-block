@@ -197,6 +197,7 @@ function Edit( {
 			<IconPopover
 				isIconPopoverOpen={ isIconPopoverOpen }
 				setIconPopoverOpen={ setIconPopoverOpen }
+				attributes={ attributes }
 				setAttributes={ setAttributes }
 				anchor={ ref?.current }
 			/>

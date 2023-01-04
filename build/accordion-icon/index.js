@@ -184,9 +184,8 @@ function IconPopover(props) {
   }, !(0,lodash__WEBPACK_IMPORTED_MODULE_2__.isEmpty)(_icons__WEBPACK_IMPORTED_MODULE_6__.icons) && (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "tz-icon-list"
   }, _icons__WEBPACK_IMPORTED_MODULE_6__.icons.map(icon => {
-    return (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_4__.Tooltip, {
-      text: icon.name
-    }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_4__.Button, {
+    console.log(icon.name, attributes?.iconName);
+    return (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_4__.Button, {
       key: `icon-${icon.name}`,
       className: classnames__WEBPACK_IMPORTED_MODULE_1___default()('tz-icon-list__item', {
         'is-active': icon.name === attributes?.iconName
@@ -194,7 +193,7 @@ function IconPopover(props) {
       onClick: () => updateIcon(icon.name, icon.svg)
     }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("span", {
       className: "tz-icon-list__item-icon"
-    }, icon.svg)));
+    }, icon.svg));
   }))));
 }
 
@@ -475,6 +474,7 @@ function Edit(_ref) {
   }, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('Set icon', 'themezee-accordion-block')))), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_components_icon_popover__WEBPACK_IMPORTED_MODULE_6__["default"], {
     isIconPopoverOpen: isIconPopoverOpen,
     setIconPopoverOpen: setIconPopoverOpen,
+    attributes: attributes,
     setAttributes: setAttributes,
     anchor: ref?.current
   }));

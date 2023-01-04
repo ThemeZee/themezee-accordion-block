@@ -11,7 +11,6 @@ import { __ } from '@wordpress/i18n';
 import {
 	Button,
 	Popover,
-	Tooltip,
 } from '@wordpress/components';
 
 /**
@@ -56,20 +55,19 @@ export default function IconPopover( props ) {
 				{ ! isEmpty( icons ) && (
 					<div className="tz-icon-list">
 						{ icons.map( ( icon ) => {
+							console.log( icon.name, attributes?.iconName );
 							return (
-								<Tooltip text={ icon.name }>
-										<Button
-										key={ `icon-${ icon.name }` }
-										className={ classnames( 'tz-icon-list__item', {
-											'is-active': icon.name === attributes?.iconName,
-										} ) }
-										onClick={ () => updateIcon( icon.name, icon.svg ) }
-									>
-										<span className="tz-icon-list__item-icon">
-											{ icon.svg }
-										</span>
-									</Button>
-								</Tooltip>
+								<Button
+									key={ `icon-${ icon.name }` }
+									className={ classnames( 'tz-icon-list__item', {
+										'is-active': icon.name === attributes?.iconName,
+									} ) }
+									onClick={ () => updateIcon( icon.name, icon.svg ) }
+								>
+									<span className="tz-icon-list__item-icon">
+										{ icon.svg }
+									</span>
+								</Button>
 							);
 						} ) }
 					</div>
