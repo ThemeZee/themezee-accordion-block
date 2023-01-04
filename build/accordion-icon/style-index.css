@@ -26,8 +26,8 @@
   color: var(--wp-admin-theme-color) !important;
 }
 .wp-block-themezee-accordion-icon-popover .tz-icon-list .tz-icon-list__item .tz-icon-list__item-icon svg {
-  width: 24px;
-  height: 24px;
+  width: 18px;
+  height: 18px;
   fill: currentColor;
 }
 .wp-block-themezee-accordion-icon-popover .tz-icon-list .tz-icon-list__item.is-active {

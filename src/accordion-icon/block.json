@@ -19,11 +19,11 @@
 		},
 		"iconWidth": {
 			"type": "string",
-			"default": "48px"
+			"default": "24px"
 		},
 		"iconHeight": {
 			"type": "string",
-			"default": "48px"
+			"default": "24px"
 		}
 	},
 	"supports": {
