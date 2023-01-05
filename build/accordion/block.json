@@ -6,6 +6,12 @@
   "title": "Accordion",
   "category": "themezee-blocks",
   "description": "Create an accordion section.",
+  "attributes": {
+    "openedByDefault": {
+      "type": "boolean",
+      "default": false
+    }
+  },
   "supports": {
     "align": [
       "wide",
