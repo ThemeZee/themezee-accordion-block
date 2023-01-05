@@ -37,6 +37,7 @@
   },
   "textdomain": "themezee-accordion-block",
   "editorScript": "file:./index.js",
+  "viewScript": "file:./frontend.js",
   "editorStyle": "file:./index.css",
   "style": "file:./style-index.css"
 }
