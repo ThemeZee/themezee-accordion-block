@@ -7,15 +7,22 @@
 ( function() {
 	document.addEventListener( 'DOMContentLoaded', function() {
 
-		/* Loop through all Accordion blocks on page */
+		// Loop through all Accordion blocks on page.
 		document.querySelectorAll( '.wp-block-themezee-accordion' ).forEach( accordion => {
 
-			// Find accordion header element.
+			// Find accordion heading block.
 			var header = accordion.querySelector( '.wp-block-themezee-accordion-heading' );
 
-			// Display accordion content if toggled.
+			// Add aria-expanded attribute.
+			header.setAttribute( 'aria-expanded', accordion.classList.contains( 'is-opened' ) );
+
+			// Listen for clicks on accordion heading block.
 			header.addEventListener( 'click', function() {
+
+				// Toggle is-opened class.
 				accordion.classList.toggle( 'is-opened' );
+
+				// Update aria-expanded attribute.
 				header.setAttribute( 'aria-expanded', accordion.classList.contains( 'is-opened' ) );
 			});
 		});
