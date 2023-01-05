@@ -42,9 +42,9 @@ export default function Edit( { attributes } ) {
 
 	return (
 		<>
-			<div { ...innerBlocksProps }>
+			<button { ...innerBlocksProps }>
 				{ innerBlocksProps.children }
-			</div>
+			</button>
 		</>
 	);
 }

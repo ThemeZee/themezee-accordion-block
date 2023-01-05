@@ -1,0 +1,12 @@
+.wp-block-themezee-accordion {
+	.wp-block-themezee-accordion-content {
+		display: none;
+		overflow: hidden;
+	}
+
+	&.is-opened {
+		.wp-block-themezee-accordion-content {
+			display: block;
+		}
+	}
+}
