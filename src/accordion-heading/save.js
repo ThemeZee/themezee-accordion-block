@@ -4,8 +4,12 @@
 import { InnerBlocks, useBlockProps } from '@wordpress/block-editor';
 
 export default function save() {
+	const blockProps = useBlockProps.save( {
+		'aria-expanded': false,
+	} );
+
 	return (
-		<button { ...useBlockProps.save() }>
+		<button { ...blockProps }>
 			<InnerBlocks.Content />
 		</button>
 	);

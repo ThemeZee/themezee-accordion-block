@@ -21,7 +21,11 @@ const angleDown = (
 
 export default function Edit( { attributes } ) {
 	const { layout = {} } = attributes;
-	const blockProps = useBlockProps();
+
+	const blockProps = useBlockProps( {
+		'aria-expanded': false,
+	} );
+
 	const innerBlocksProps = useInnerBlocksProps( blockProps, {
 		template: [ 
 			[ 'core/heading', {
