@@ -32,10 +32,11 @@ export default function IconPopover( props ) {
 		return null;
 	}
 
-	function updateIcon( name, svg ) {
+	function updateIcon( name, svg, hover ) {
 		setAttributes( {
 			iconName: name,
 			iconSVG: svg,
+			iconHover: hover,
 		} );
 		setIconPopoverOpen( false );
 	}
@@ -62,7 +63,7 @@ export default function IconPopover( props ) {
 									className={ classnames( 'tz-icon-list__item', {
 										'is-active': icon.name === attributes?.iconName,
 									} ) }
-									onClick={ () => updateIcon( icon.name, icon.svg ) }
+									onClick={ () => updateIcon( icon.name, icon.svg, icon.hover ) }
 								>
 									<span className="tz-icon-list__item-icon">
 										{ icon.svg }

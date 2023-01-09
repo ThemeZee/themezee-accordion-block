@@ -19,6 +19,10 @@
       "selector": "figure",
       "default": ""
     },
+    "iconHover": {
+      "type": "string",
+      "default": "flip"
+    },
     "iconWidth": {
       "type": "string",
       "default": "24px"

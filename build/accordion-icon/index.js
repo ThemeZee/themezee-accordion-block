@@ -53,10 +53,11 @@ function IconPopover(props) {
   if (!isIconPopoverOpen) {
     return null;
   }
-  function updateIcon(name, svg) {
+  function updateIcon(name, svg, hover) {
     setAttributes({
       iconName: name,
-      iconSVG: svg
+      iconSVG: svg,
+      iconHover: hover
     });
     setIconPopoverOpen(false);
   }
@@ -79,7 +80,7 @@ function IconPopover(props) {
       className: classnames__WEBPACK_IMPORTED_MODULE_1___default()('tz-icon-list__item', {
         'is-active': icon.name === attributes?.iconName
       }),
-      onClick: () => updateIcon(icon.name, icon.svg)
+      onClick: () => updateIcon(icon.name, icon.svg, icon.hover)
     }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("span", {
       className: "tz-icon-list__item-icon"
     }, icon.svg));
@@ -260,6 +261,7 @@ function Edit(_ref) {
   const {
     iconName,
     iconSVG,
+    iconHover,
     iconWidth,
     iconHeight
   } = attributes;
@@ -277,6 +279,11 @@ function Edit(_ref) {
   });
   const ref = (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.useRef)();
   const blockProps = (0,_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_4__.useBlockProps)({
+    className: classnames__WEBPACK_IMPORTED_MODULE_1___default()({
+      'is-hover-flip': iconHover === 'flip',
+      'is-hover-rotate': iconHover === 'rotate',
+      'is-hover-icon': iconHover === 'icon'
+    }),
     ref
   });
   const iconClasses = classnames__WEBPACK_IMPORTED_MODULE_1___default()('icon', {
@@ -548,7 +555,7 @@ const icons = [{
 }, {
   name: 'arrowRight',
   svg: arrowRight,
-  hover: 'flip'
+  hover: 'rotate'
 }, {
   name: 'arrowUp',
   svg: arrowUp,
@@ -560,7 +567,7 @@ const icons = [{
 }, {
   name: 'angleRight',
   svg: angleRight,
-  hover: 'flip'
+  hover: 'rotate'
 }, {
   name: 'angleUp',
   svg: angleUp,
@@ -572,7 +579,7 @@ const icons = [{
 }, {
   name: 'anglesRight',
   svg: anglesRight,
-  hover: 'flip'
+  hover: 'rotate'
 }, {
   name: 'anglesUp',
   svg: anglesUp,
@@ -584,7 +591,7 @@ const icons = [{
 }, {
   name: 'caretRight',
   svg: caretRight,
-  hover: 'flip'
+  hover: 'rotate'
 }, {
   name: 'caretUp',
   svg: caretUp,
@@ -596,7 +603,7 @@ const icons = [{
 }, {
   name: 'circleArrowRight',
   svg: circleArrowRight,
-  hover: 'flip'
+  hover: 'rotate'
 }, {
   name: 'circleArrowUp',
   svg: circleArrowUp,
@@ -608,7 +615,7 @@ const icons = [{
 }, {
   name: 'circleChevronRight',
   svg: circleChevronRight,
-  hover: 'flip'
+  hover: 'rotate'
 }, {
   name: 'circleChevronUp',
   svg: circleChevronUp,
@@ -619,7 +626,7 @@ const icons = [{
 }, {
   name: 'circleRight',
   svg: circleRight,
-  hover: 'flip'
+  hover: 'rotate'
 }, {
   name: 'circleUp',
   svg: circleUp,
@@ -631,7 +638,7 @@ const icons = [{
 }, {
   name: 'longRight',
   svg: longRight,
-  hover: 'flip'
+  hover: 'rotate'
 }, {
   name: 'longUp',
   svg: longUp,
@@ -655,7 +662,7 @@ const icons = [{
 }, {
   name: 'squareCaretRight',
   svg: squareCaretRight,
-  hover: 'flip'
+  hover: 'rotate'
 }, {
   name: 'squareCaretUp',
   svg: squareCaretUp,
@@ -765,19 +772,15 @@ function save(_ref) {
   const {
     iconName,
     iconSVG,
+    iconHover,
     iconWidth,
-    iconHeight,
-    justification,
-    rotate,
-    flipHorizontal,
-    flipVertical
+    iconHeight
   } = attributes;
   const blockProps = _wordpress_block_editor__WEBPACK_IMPORTED_MODULE_4__.useBlockProps.save({
     className: classnames__WEBPACK_IMPORTED_MODULE_1___default()({
-      [`items-justified-${justification}`]: justification,
-      [`rotate-${rotate}`]: rotate,
-      'flip-horizontal': flipHorizontal,
-      'flip-vertical': flipVertical
+      'is-hover-flip': iconHover === 'flip',
+      'is-hover-rotate': iconHover === 'rotate',
+      'is-hover-icon': iconHover === 'icon'
     })
   });
   const iconClasses = classnames__WEBPACK_IMPORTED_MODULE_1___default()('icon', {
@@ -4525,7 +4528,7 @@ var Element = _index_js__WEBPACK_IMPORTED_MODULE_0__.Element;
 /***/ ((module) => {
 
 "use strict";
-module.exports = JSON.parse('{"$schema":"https://schemas.wp.org/trunk/block.json","apiVersion":2,"name":"themezee/accordion-icon","version":"1.0","title":"Accordion Icon","category":"themezee-blocks","parent":["themezee/accordion-heading"],"description":"Displays the accordion icon.","attributes":{"iconName":{"type":"string"},"iconSVG":{"type":"string","source":"html","selector":"figure","default":""},"iconWidth":{"type":"string","default":"24px"},"iconHeight":{"type":"string","default":"24px"}},"supports":{"align":false,"html":false,"color":{"gradients":true,"__experimentalDefaultControls":{"text":true,"background":true}},"spacing":{"margin":true,"padding":true,"__experimentalDefaultControls":{"padding":true}},"__experimentalBorder":{"color":true,"style":true,"width":true,"radius":true,"__experimentalDefaultControls":{"radius":true}}},"textdomain":"themezee-accordion-block","editorScript":"file:./index.js","editorStyle":"file:./index.css","style":"file:./style-index.css"}');
+module.exports = JSON.parse('{"$schema":"https://schemas.wp.org/trunk/block.json","apiVersion":2,"name":"themezee/accordion-icon","version":"1.0","title":"Accordion Icon","category":"themezee-blocks","parent":["themezee/accordion-heading"],"description":"Displays the accordion icon.","attributes":{"iconName":{"type":"string"},"iconSVG":{"type":"string","source":"html","selector":"figure","default":""},"iconHover":{"type":"string","default":"flip"},"iconWidth":{"type":"string","default":"24px"},"iconHeight":{"type":"string","default":"24px"}},"supports":{"align":false,"html":false,"color":{"gradients":true,"__experimentalDefaultControls":{"text":true,"background":true}},"spacing":{"margin":true,"padding":true,"__experimentalDefaultControls":{"padding":true}},"__experimentalBorder":{"color":true,"style":true,"width":true,"radius":true,"__experimentalDefaultControls":{"radius":true}}},"textdomain":"themezee-accordion-block","editorScript":"file:./index.js","editorStyle":"file:./index.css","style":"file:./style-index.css"}');
 
 /***/ })
 

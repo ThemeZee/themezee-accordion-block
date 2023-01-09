@@ -188,74 +188,92 @@ export const icons = [
 	{
 		name: 'arrowDown',
 		svg: arrowDown,
+		hover: 'flip',
 	},
 	{
 		name: 'arrowRight',
 		svg: arrowRight,
+		hover: 'rotate',
 	},
 	{
 		name: 'arrowUp',
 		svg: arrowUp,
+		hover: 'flip',
 	},
 	{
 		name: 'angleDown',
 		svg: angleDown,
+		hover: 'flip',
 	},
 	{
 		name: 'angleRight',
 		svg: angleRight,
+		hover: 'rotate',
 	},
 	{
 		name: 'angleUp',
 		svg: angleUp,
+		hover: 'flip',
 	},
 	{
 		name: 'anglesDown',
 		svg: anglesDown,
+		hover: 'flip',
 	},
 	{
 		name: 'anglesRight',
 		svg: anglesRight,
+		hover: 'rotate',
 	},
 	{
 		name: 'anglesUp',
 		svg: anglesUp,
+		hover: 'flip',
 	},
 	{
 		name: 'caretDown',
 		svg: caretDown,
+		hover: 'flip',
 	},
 	{
 		name: 'caretRight',
 		svg: caretRight,
+		hover: 'rotate',
 	},
 	{
 		name: 'caretUp',
 		svg: caretUp,
+		hover: 'flip',
 	},
 	{
 		name: 'circleArrowDown',
 		svg: circleArrowDown,
+		hover: 'flip',
 	},
 	{
 		name: 'circleArrowRight',
 		svg: circleArrowRight,
+		hover: 'rotate',
 	},
 	{
 		name: 'circleArrowUp',
 		svg: circleArrowUp,
+		hover: 'flip',
 	},
 	{
 		name: 'circleChevronDown',
 		svg: circleChevronDown,
+		hover: 'flip',
 	},
 	{
 		name: 'circleChevronRight',
 		svg: circleChevronRight,
+		hover: 'rotate',
 	},
 	{
 		name: 'circleChevronUp',
 		svg: circleChevronUp,
+		hover: 'flip',
 	},
 	{
 		name: 'circleDown',
@@ -264,45 +282,56 @@ export const icons = [
 	{
 		name: 'circleRight',
 		svg: circleRight,
+		hover: 'rotate',
 	},
 	{
 		name: 'circleUp',
 		svg: circleUp,
+		hover: 'flip',
 	},
 	{
 		name: 'longDown',
 		svg: longDown,
+		hover: 'flip',
 	},
 	{
 		name: 'longRight',
 		svg: longRight,
+		hover: 'rotate',
 	},
 	{
 		name: 'longUp',
 		svg: longUp,
+		hover: 'flip',
 	},
 	{
 		name: 'plus',
 		svg: plus,
+		hover: 'flip',
 	},
 	{
 		name: 'plusCircle',
 		svg: plusCircle,
+		hover: 'flip',
 	},
 	{
 		name: 'plusSquare',
 		svg: plusSquare,
+		hover: 'flip',
 	},
 	{
 		name: 'squareCaretDown',
 		svg: squareCaretDown,
+		hover: 'flip',
 	},
 	{
 		name: 'squareCaretRight',
 		svg: squareCaretRight,
+		hover: 'rotate',
 	},
 	{
 		name: 'squareCaretUp',
 		svg: squareCaretUp,
+		hover: 'flip',
 	},
 ];

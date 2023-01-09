@@ -45,6 +45,7 @@ function Edit( {
 	const {
 		iconName,
 		iconSVG,
+		iconHover,
 		iconWidth,
 		iconHeight,
 	} = attributes;
@@ -67,7 +68,14 @@ function Edit( {
 	} );
 
 	const ref = useRef();
-	const blockProps = useBlockProps( { ref } );
+	const blockProps = useBlockProps( {
+		className: classnames( {
+			'is-hover-flip': iconHover === 'flip',
+			'is-hover-rotate': iconHover === 'rotate',
+			'is-hover-icon': iconHover === 'icon',
+		} ),
+		ref,
+	} );
 
 	const iconClasses = classnames( 'icon', {
 		[ `icon-name-${ iconName }` ]: iconName,

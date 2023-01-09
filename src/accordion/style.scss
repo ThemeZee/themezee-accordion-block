@@ -8,5 +8,13 @@
 		.wp-block-themezee-accordion-content {
 			display: block;
 		}
+
+		.wp-block-themezee-accordion-icon.is-hover-flip figure {
+			transform: scaleY(-1);
+		}
+
+		.wp-block-themezee-accordion-icon.is-hover-rotate figure {
+			transform: rotate(90deg);
+		}
 	}
 }
