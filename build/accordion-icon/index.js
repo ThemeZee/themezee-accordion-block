@@ -1,53 +1,6 @@
 /******/ (() => { // webpackBootstrap
 /******/ 	var __webpack_modules__ = ({
 
-/***/ "./node_modules/@wordpress/icons/build-module/icon/index.js":
-/*!******************************************************************!*\
-  !*** ./node_modules/@wordpress/icons/build-module/icon/index.js ***!
-  \******************************************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
-/* harmony export */ });
-/* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @wordpress/element */ "@wordpress/element");
-/* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__);
-/**
- * WordPress dependencies
- */
-
-/** @typedef {{icon: JSX.Element, size?: number} & import('@wordpress/primitives').SVGProps} IconProps */
-
-/**
- * Return an SVG icon.
- *
- * @param {IconProps} props icon is the SVG component to render
- *                          size is a number specifiying the icon size in pixels
- *                          Other props will be passed to wrapped SVG component
- *
- * @return {JSX.Element}  Icon component
- */
-
-function Icon(_ref) {
-  let {
-    icon,
-    size = 24,
-    ...props
-  } = _ref;
-  return (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.cloneElement)(icon, {
-    width: size,
-    height: size,
-    ...props
-  });
-}
-
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (Icon);
-//# sourceMappingURL=index.js.map
-
-/***/ }),
-
 /***/ "./src/accordion-icon/components/icon-popover/index.js":
 /*!*************************************************************!*\
   !*** ./src/accordion-icon/components/icon-popover/index.js ***!
@@ -266,7 +219,6 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _wordpress_block_editor__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_4__);
 /* harmony import */ var _wordpress_components__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @wordpress/components */ "@wordpress/components");
 /* harmony import */ var _wordpress_components__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(_wordpress_components__WEBPACK_IMPORTED_MODULE_5__);
-/* harmony import */ var _wordpress_icons__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! @wordpress/icons */ "./node_modules/@wordpress/icons/build-module/icon/index.js");
 /* harmony import */ var _components_icon_popover__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./components/icon-popover */ "./src/accordion-icon/components/icon-popover/index.js");
 /* harmony import */ var _components_unit_range_control__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./components/unit-range-control */ "./src/accordion-icon/components/unit-range-control/index.js");
 /* harmony import */ var _editor_scss__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./editor.scss */ "./src/accordion-icon/editor.scss");
@@ -285,20 +237,12 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-
-
 /**
  * Internal dependencies
  */
 
 
 
-const placeholderIcon = (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_5__.SVG, {
-  xmlns: "http://www.w3.org/2000/svg",
-  viewBox: "0 0 48 48"
-}, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_5__.Path, {
-  d: "m33.4 31 8.6-7.4 4.25.35-9.45 8.1 2.85 12.3-3.7-2.25Zm-4.65-14.45-2.85-6.7L27.5 6l4.6 10.85Zm-15.6 21.2 7.85-4.7 7.85 4.75-2.1-8.9 6.9-6-9.1-.8L21 13.7l-3.55 8.35-9.1.8 6.9 6ZM8.65 44l3.25-14.05L1 20.5l14.4-1.25L21 6l5.6 13.25L41 20.5l-10.9 9.45L33.35 44 21 36.55ZM21 26.75Z"
-}));
 
 /**
  * The edit function describes the structure of your block in the context of the
@@ -331,19 +275,10 @@ function Edit(_ref) {
       vh: 6
     }
   });
-  const borderProps = (0,_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_4__.__experimentalUseBorderProps)(attributes);
-  const colorProps = (0,_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_4__.__experimentalUseColorProps)(attributes);
-  const spacingProps = (0,_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_4__.__experimentalGetSpacingClassesAndStyles)(attributes);
   const ref = (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.useRef)();
   const blockProps = (0,_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_4__.useBlockProps)({
     ref
   });
-  const containerClasses = classnames__WEBPACK_IMPORTED_MODULE_1___default()('icon-container', colorProps.className, borderProps.className);
-  const containerStyles = {
-    ...borderProps.style,
-    ...colorProps.style,
-    ...spacingProps.style
-  };
   const iconClasses = classnames__WEBPACK_IMPORTED_MODULE_1___default()('icon', {
     [`icon-name-${iconName}`]: iconName
   });
@@ -361,10 +296,6 @@ function Edit(_ref) {
     style: iconStyles,
     "aria-label": (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('Expand', 'themezee-accordion-block')
   }, iconElement);
-  const iconMarkup = (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
-    className: containerClasses,
-    style: containerStyles
-  }, figure);
   return (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, iconName && (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_4__.BlockControls, null, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_5__.ToolbarGroup, null, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_5__.ToolbarButton, {
     onClick: () => setIconPopoverOpen(true)
   }, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('Change icon', 'themezee-accordion-block')))), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_4__.InspectorControls, null, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_5__.__experimentalToolsPanel, {
@@ -396,18 +327,7 @@ function Edit(_ref) {
       'vw': 20,
       'vh': 20
     }
-  }))))), iconName && (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", blockProps, iconMarkup), !iconName && (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", blockProps, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_5__.Placeholder, {
-    icon: placeholderIcon,
-    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('Icon', 'themezee-accordion-block'),
-    instructions: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('Browse all icons in the library or run a quick search.', 'themezee-accordion-block'),
-    className: "wp-block-themezee-icon-placeholder has-illustration"
-  }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_icons__WEBPACK_IMPORTED_MODULE_9__["default"], {
-    className: "components-placeholder__illustration",
-    icon: placeholderIcon
-  }), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_5__.Button, {
-    isTertiary: true,
-    onClick: () => setIconPopoverOpen(true)
-  }, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('Set icon', 'themezee-accordion-block')))), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_components_icon_popover__WEBPACK_IMPORTED_MODULE_6__["default"], {
+  }))))), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", blockProps, figure), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_components_icon_popover__WEBPACK_IMPORTED_MODULE_6__["default"], {
     isIconPopoverOpen: isIconPopoverOpen,
     setIconPopoverOpen: setIconPopoverOpen,
     attributes: attributes,
@@ -623,94 +543,123 @@ const squareCaretUp = (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createE
 }));
 const icons = [{
   name: 'arrowDown',
-  svg: arrowDown
+  svg: arrowDown,
+  hover: 'flip'
 }, {
   name: 'arrowRight',
-  svg: arrowRight
+  svg: arrowRight,
+  hover: 'flip'
 }, {
   name: 'arrowUp',
-  svg: arrowUp
+  svg: arrowUp,
+  hover: 'flip'
 }, {
   name: 'angleDown',
-  svg: angleDown
+  svg: angleDown,
+  hover: 'flip'
 }, {
   name: 'angleRight',
-  svg: angleRight
+  svg: angleRight,
+  hover: 'flip'
 }, {
   name: 'angleUp',
-  svg: angleUp
+  svg: angleUp,
+  hover: 'flip'
 }, {
   name: 'anglesDown',
-  svg: anglesDown
+  svg: anglesDown,
+  hover: 'flip'
 }, {
   name: 'anglesRight',
-  svg: anglesRight
+  svg: anglesRight,
+  hover: 'flip'
 }, {
   name: 'anglesUp',
-  svg: anglesUp
+  svg: anglesUp,
+  hover: 'flip'
 }, {
   name: 'caretDown',
-  svg: caretDown
+  svg: caretDown,
+  hover: 'flip'
 }, {
   name: 'caretRight',
-  svg: caretRight
+  svg: caretRight,
+  hover: 'flip'
 }, {
   name: 'caretUp',
-  svg: caretUp
+  svg: caretUp,
+  hover: 'flip'
 }, {
   name: 'circleArrowDown',
-  svg: circleArrowDown
+  svg: circleArrowDown,
+  hover: 'flip'
 }, {
   name: 'circleArrowRight',
-  svg: circleArrowRight
+  svg: circleArrowRight,
+  hover: 'flip'
 }, {
   name: 'circleArrowUp',
-  svg: circleArrowUp
+  svg: circleArrowUp,
+  hover: 'flip'
 }, {
   name: 'circleChevronDown',
-  svg: circleChevronDown
+  svg: circleChevronDown,
+  hover: 'flip'
 }, {
   name: 'circleChevronRight',
-  svg: circleChevronRight
+  svg: circleChevronRight,
+  hover: 'flip'
 }, {
   name: 'circleChevronUp',
-  svg: circleChevronUp
+  svg: circleChevronUp,
+  hover: 'flip'
 }, {
   name: 'circleDown',
   svg: circleDown
 }, {
   name: 'circleRight',
-  svg: circleRight
+  svg: circleRight,
+  hover: 'flip'
 }, {
   name: 'circleUp',
-  svg: circleUp
+  svg: circleUp,
+  hover: 'flip'
 }, {
   name: 'longDown',
-  svg: longDown
+  svg: longDown,
+  hover: 'flip'
 }, {
   name: 'longRight',
-  svg: longRight
+  svg: longRight,
+  hover: 'flip'
 }, {
   name: 'longUp',
-  svg: longUp
+  svg: longUp,
+  hover: 'flip'
 }, {
   name: 'plus',
-  svg: plus
+  svg: plus,
+  hover: 'flip'
 }, {
   name: 'plusCircle',
-  svg: plusCircle
+  svg: plusCircle,
+  hover: 'flip'
 }, {
   name: 'plusSquare',
-  svg: plusSquare
+  svg: plusSquare,
+  hover: 'flip'
 }, {
   name: 'squareCaretDown',
-  svg: squareCaretDown
+  svg: squareCaretDown,
+  hover: 'flip'
 }, {
   name: 'squareCaretRight',
-  svg: squareCaretRight
+  svg: squareCaretRight,
+  hover: 'flip'
 }, {
   name: 'squareCaretUp',
-  svg: squareCaretUp
+  svg: squareCaretUp,
+  hover: 'flip'
 }];
 
 /***/ }),
@@ -783,8 +732,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var classnames__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! classnames */ "./node_modules/classnames/index.js");
 /* harmony import */ var classnames__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(classnames__WEBPACK_IMPORTED_MODULE_1__);
 /* harmony import */ var html_react_parser__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! html-react-parser */ "./node_modules/html-react-parser/index.mjs");
-/* harmony import */ var _wordpress_block_editor__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @wordpress/block-editor */ "@wordpress/block-editor");
-/* harmony import */ var _wordpress_block_editor__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_3__);
+/* harmony import */ var _wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @wordpress/i18n */ "@wordpress/i18n");
+/* harmony import */ var _wordpress_i18n__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__);
+/* harmony import */ var _wordpress_block_editor__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @wordpress/block-editor */ "@wordpress/block-editor");
+/* harmony import */ var _wordpress_block_editor__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_4__);
 
 /**
  * External dependencies
@@ -795,6 +746,7 @@ __webpack_require__.r(__webpack_exports__);
 /**
  * WordPress dependencies
  */
+
 
 
 /**
@@ -811,7 +763,6 @@ function save(_ref) {
     attributes
   } = _ref;
   const {
-    blockWidth,
     iconName,
     iconSVG,
     iconWidth,
@@ -819,14 +770,9 @@ function save(_ref) {
     justification,
     rotate,
     flipHorizontal,
-    flipVertical,
-    url,
-    linkTarget,
-    rel,
-    label,
-    title
+    flipVertical
   } = attributes;
-  const blockProps = _wordpress_block_editor__WEBPACK_IMPORTED_MODULE_3__.useBlockProps.save({
+  const blockProps = _wordpress_block_editor__WEBPACK_IMPORTED_MODULE_4__.useBlockProps.save({
     className: classnames__WEBPACK_IMPORTED_MODULE_1___default()({
       [`items-justified-${justification}`]: justification,
       [`rotate-${rotate}`]: rotate,
@@ -834,16 +780,6 @@ function save(_ref) {
       'flip-vertical': flipVertical
     })
   });
-  const borderProps = (0,_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_3__.__experimentalGetBorderClassesAndStyles)(attributes);
-  const colorProps = (0,_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_3__.__experimentalGetColorClassesAndStyles)(attributes);
-  const spacingProps = (0,_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_3__.__experimentalGetSpacingClassesAndStyles)(attributes);
-  const containerClasses = classnames__WEBPACK_IMPORTED_MODULE_1___default()('icon-container', colorProps.className, borderProps.className);
-  const containerStyles = {
-    ...borderProps.style,
-    ...colorProps.style,
-    ...spacingProps.style,
-    width: blockWidth ? blockWidth : undefined
-  };
   const iconClasses = classnames__WEBPACK_IMPORTED_MODULE_1___default()('icon', {
     [`icon-name-${iconName}`]: iconName
   });
@@ -859,20 +795,9 @@ function save(_ref) {
   const figure = (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("figure", {
     className: iconClasses,
     style: iconStyles,
-    "aria-label": label ? label : undefined,
-    title: title
+    "aria-label": (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('Expand', 'themezee-accordion-block')
   }, iconElement);
-  const iconMarkup = url ? (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("a", {
-    className: containerClasses,
-    href: url,
-    target: linkTarget,
-    rel: rel,
-    style: containerStyles
-  }, figure) : (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
-    className: containerClasses,
-    style: containerStyles
-  }, figure);
-  return (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", blockProps, iconMarkup);
+  return (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", blockProps, figure);
 }
 
 /***/ }),
@@ -4600,7 +4525,7 @@ var Element = _index_js__WEBPACK_IMPORTED_MODULE_0__.Element;
 /***/ ((module) => {
 
 "use strict";
-module.exports = JSON.parse('{"$schema":"https://schemas.wp.org/trunk/block.json","apiVersion":2,"name":"themezee/accordion-icon","version":"1.0","title":"Accordion Icon","category":"themezee-blocks","parent":["themezee/accordion-heading"],"description":"Displays the accordion icon.","attributes":{"iconName":{"type":"string"},"iconSVG":{"type":"string","source":"html","selector":"figure","default":""},"iconWidth":{"type":"string","default":"24px"},"iconHeight":{"type":"string","default":"24px"}},"supports":{"align":false,"html":false,"color":{"__experimentalSkipSerialization":true,"gradients":true,"__experimentalDefaultControls":{"text":true,"background":true}},"spacing":{"__experimentalSkipSerialization":true,"margin":true,"padding":true,"__experimentalDefaultControls":{"padding":true}},"__experimentalBorder":{"color":true,"style":true,"width":true,"radius":true,"__experimentalSkipSerialization":true,"__experimentalDefaultControls":{"radius":true}}},"textdomain":"themezee-accordion-block","editorScript":"file:./index.js","editorStyle":"file:./index.css","style":"file:./style-index.css"}');
+module.exports = JSON.parse('{"$schema":"https://schemas.wp.org/trunk/block.json","apiVersion":2,"name":"themezee/accordion-icon","version":"1.0","title":"Accordion Icon","category":"themezee-blocks","parent":["themezee/accordion-heading"],"description":"Displays the accordion icon.","attributes":{"iconName":{"type":"string"},"iconSVG":{"type":"string","source":"html","selector":"figure","default":""},"iconWidth":{"type":"string","default":"24px"},"iconHeight":{"type":"string","default":"24px"}},"supports":{"align":false,"html":false,"color":{"gradients":true,"__experimentalDefaultControls":{"text":true,"background":true}},"spacing":{"margin":true,"padding":true,"__experimentalDefaultControls":{"padding":true}},"__experimentalBorder":{"color":true,"style":true,"width":true,"radius":true,"__experimentalDefaultControls":{"radius":true}}},"textdomain":"themezee-accordion-block","editorScript":"file:./index.js","editorStyle":"file:./index.css","style":"file:./style-index.css"}');
 
 /***/ })
 

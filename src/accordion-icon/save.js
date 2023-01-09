@@ -7,11 +7,9 @@ import parse from 'html-react-parser';
 /**
  * WordPress dependencies
  */
+import { __ } from '@wordpress/i18n';
 import {
 	useBlockProps,
-	__experimentalGetBorderClassesAndStyles as getBorderClassesAndStyles,
-	__experimentalGetColorClassesAndStyles as getColorClassesAndStyles,
-	__experimentalGetSpacingClassesAndStyles as getSpacingClassesAndStyles,
 } from '@wordpress/block-editor';
 
 /**
@@ -25,7 +23,6 @@ import {
  */
 export default function save( {attributes} ) {
 	const {
-		blockWidth,
 		iconName,
 		iconSVG,
 		iconWidth,
@@ -34,11 +31,6 @@ export default function save( {attributes} ) {
 		rotate,
 		flipHorizontal,
 		flipVertical,
-		url,
-		linkTarget,
-		rel,
-		label,
-		title,
 	} = attributes;
 
 	const blockProps = useBlockProps.save( {
@@ -49,23 +41,6 @@ export default function save( {attributes} ) {
 			'flip-vertical': flipVertical,
 		} ),
 	} );
-
-	const borderProps = getBorderClassesAndStyles( attributes );
-	const colorProps = getColorClassesAndStyles( attributes );
-	const spacingProps = getSpacingClassesAndStyles( attributes );
-
-	const containerClasses = classnames(
-		'icon-container',
-		colorProps.className,
-		borderProps.className,
-	);
-
-	const containerStyles = {
-		...borderProps.style,
-		...colorProps.style,
-		...spacingProps.style,
-		width: blockWidth ? blockWidth : undefined,
-	};
 
 	const iconClasses = classnames( 'icon', {
 		[ `icon-name-${ iconName }` ]: iconName,
@@ -80,30 +55,14 @@ export default function save( {attributes} ) {
 	const iconElement = typeof iconSVG === 'string' ? parse( iconSVG, { trim: true } ) : iconSVG;
 
 	const figure = (
-		<figure className={ iconClasses } style={ iconStyles } aria-label={ label ? label : undefined } title={ title }>
+		<figure className={ iconClasses } style={ iconStyles } aria-label={ __( 'Expand', 'themezee-accordion-block' ) }>
 			{ iconElement }
 		</figure>
 	);
 
-	const iconMarkup = url ? (
-		<a
-			className={ containerClasses }
-			href={ url }
-			target={ linkTarget }
-			rel={ rel }
-			style={ containerStyles }
-		>
-			{ figure }
-		</a>
-	) : (
-		<div className={ containerClasses } style={ containerStyles }>
-			{ figure }
-		</div>
-	);
-
 	return (
 		<div { ...blockProps }>
-			{ iconMarkup }
+			{ figure }
 		</div>
 	);
 }

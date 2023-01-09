@@ -32,7 +32,6 @@
     "align": false,
     "html": false,
     "color": {
-      "__experimentalSkipSerialization": true,
       "gradients": true,
       "__experimentalDefaultControls": {
         "text": true,
@@ -40,7 +39,6 @@
       }
     },
     "spacing": {
-      "__experimentalSkipSerialization": true,
       "margin": true,
       "padding": true,
       "__experimentalDefaultControls": {
@@ -52,7 +50,6 @@
       "style": true,
       "width": true,
       "radius": true,
-      "__experimentalSkipSerialization": true,
       "__experimentalDefaultControls": {
         "radius": true
       }

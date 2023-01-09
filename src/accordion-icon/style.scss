@@ -1,21 +1,17 @@
 .wp-block-themezee-accordion-icon {
 	display: flex;
+	justify-content: center;
+	width: fit-content;
 
-	.icon-container {
-		display: flex;
-		justify-content: center;
-		width: fit-content;
+	figure {
+		margin: 0;
 
-		figure {
-			margin: 0;
-
-			svg {
-				display: flex;
-				width: inherit;
-				height: inherit;
-				fill: currentColor;
-				vertical-align: top;
-			}
+		svg {
+			display: flex;
+			width: inherit;
+			height: inherit;
+			fill: currentColor;
+			vertical-align: top;
 		}
 	}
 }

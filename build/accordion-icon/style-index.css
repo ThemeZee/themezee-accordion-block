@@ -63,17 +63,14 @@
   \******************************************************************************************************************************************************************************************************************************************************/
 .wp-block-themezee-accordion-icon {
   display: flex;
-}
-.wp-block-themezee-accordion-icon .icon-container {
-  display: flex;
   justify-content: center;
   width: -moz-fit-content;
   width: fit-content;
 }
-.wp-block-themezee-accordion-icon .icon-container figure {
+.wp-block-themezee-accordion-icon figure {
   margin: 0;
 }
-.wp-block-themezee-accordion-icon .icon-container figure svg {
+.wp-block-themezee-accordion-icon figure svg {
   display: flex;
   width: inherit;
   height: inherit;
