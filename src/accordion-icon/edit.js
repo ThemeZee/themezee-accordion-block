@@ -46,6 +46,7 @@ function Edit( {
 		iconName,
 		iconSVG,
 		iconHover,
+		iconClose,
 		iconWidth,
 		iconHeight,
 	} = attributes;
@@ -90,10 +91,21 @@ function Edit( {
 	const iconElement = typeof iconSVG === 'string' ? parse( iconSVG, { trim: true } ) : iconSVG;
 
 	const figure = (
-		<figure className={ iconClasses } style={ iconStyles } aria-label={ __( 'Expand', 'themezee-accordion-block' ) }>
+		<figure className={ classnames( 'expand-icon', { ...iconClasses } ) } style={ iconStyles }>
 			{ iconElement }
 		</figure>
 	);
+
+	// Add close icon if needed.
+	let closeFigure;
+	if ( iconClose ) {
+		const closeElement = typeof iconClose === 'string' ? parse( iconClose, { trim: true } ) : iconClose;
+		closeFigure = (
+			<figure className={ classnames( 'collapse-icon', { ...iconClasses } ) } style={ iconStyles }>
+				{ closeElement }
+			</figure>
+		);
+	}
 
 	return (
 		<>
@@ -138,6 +150,7 @@ function Edit( {
 
 			<div { ...blockProps }>
 				{ figure }
+				{ closeFigure }
 			</div>
 
 			<IconPopover

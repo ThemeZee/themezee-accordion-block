@@ -166,6 +166,24 @@ const plusSquare = (
 	</SVG>
 );
 
+const minus = (
+	<SVG xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
+		<Path d="M432 256c0 17.7-14.3 32-32 32L48 288c-17.7 0-32-14.3-32-32s14.3-32 32-32l352 0c17.7 0 32 14.3 32 32z"/>
+	</SVG>
+);
+
+const minusCircle = (
+	<SVG xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+		<Path d="M256 512c141.4 0 256-114.6 256-256S397.4 0 256 0S0 114.6 0 256S114.6 512 256 512zM184 232H328c13.3 0 24 10.7 24 24s-10.7 24-24 24H184c-13.3 0-24-10.7-24-24s10.7-24 24-24z"/>
+	</SVG>
+);
+
+const minusSquare = (
+	<SVG xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
+		<Path d="M64 32C28.7 32 0 60.7 0 96V416c0 35.3 28.7 64 64 64H384c35.3 0 64-28.7 64-64V96c0-35.3-28.7-64-64-64H64zm88 200H296c13.3 0 24 10.7 24 24s-10.7 24-24 24H152c-13.3 0-24-10.7-24-24s10.7-24 24-24z"/>
+	</SVG>
+);
+
 const squareCaretDown = (
 	<SVG xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
 		<Path d="M384 480c35.3 0 64-28.7 64-64l0-320c0-35.3-28.7-64-64-64L64 32C28.7 32 0 60.7 0 96L0 416c0 35.3 28.7 64 64 64l320 0zM224 352c-6.7 0-13-2.8-17.6-7.7l-104-112c-6.5-7-8.2-17.2-4.4-25.9s12.5-14.4 22-14.4l208 0c9.5 0 18.2 5.7 22 14.4s2.1 18.9-4.4 25.9l-104 112c-4.5 4.9-10.9 7.7-17.6 7.7z"/>
@@ -307,17 +325,20 @@ export const icons = [
 	{
 		name: 'plus',
 		svg: plus,
-		hover: 'flip',
+		hover: 'icon',
+		close: minus,
 	},
 	{
 		name: 'plusCircle',
 		svg: plusCircle,
-		hover: 'flip',
+		hover: 'icon',
+		close: minusCircle,
 	},
 	{
 		name: 'plusSquare',
 		svg: plusSquare,
-		hover: 'flip',
+		hover: 'icon',
+		close: minusSquare,
 	},
 	{
 		name: 'squareCaretDown',

@@ -53,11 +53,18 @@ function IconPopover(props) {
   if (!isIconPopoverOpen) {
     return null;
   }
-  function updateIcon(name, svg, hover) {
+  function updateIcon(icon) {
+    const {
+      name,
+      svg,
+      hover,
+      close = ''
+    } = icon;
     setAttributes({
       iconName: name,
       iconSVG: svg,
-      iconHover: hover
+      iconHover: hover,
+      iconClose: close
     });
     setIconPopoverOpen(false);
   }
@@ -80,7 +87,7 @@ function IconPopover(props) {
       className: classnames__WEBPACK_IMPORTED_MODULE_1___default()('tz-icon-list__item', {
         'is-active': icon.name === attributes?.iconName
       }),
-      onClick: () => updateIcon(icon.name, icon.svg, icon.hover)
+      onClick: () => updateIcon(icon)
     }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("span", {
       className: "tz-icon-list__item-icon"
     }, icon.svg));
@@ -262,6 +269,7 @@ function Edit(_ref) {
     iconName,
     iconSVG,
     iconHover,
+    iconClose,
     iconWidth,
     iconHeight
   } = attributes;
@@ -299,10 +307,25 @@ function Edit(_ref) {
     trim: true
   }) : iconSVG;
   const figure = (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("figure", {
-    className: iconClasses,
-    style: iconStyles,
-    "aria-label": (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('Expand', 'themezee-accordion-block')
+    className: classnames__WEBPACK_IMPORTED_MODULE_1___default()('expand-icon', {
+      ...iconClasses
+    }),
+    style: iconStyles
   }, iconElement);
+
+  // Add close icon if needed.
+  let closeFigure;
+  if (iconClose) {
+    const closeElement = typeof iconClose === 'string' ? (0,html_react_parser__WEBPACK_IMPORTED_MODULE_2__["default"])(iconClose, {
+      trim: true
+    }) : iconClose;
+    closeFigure = (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("figure", {
+      className: classnames__WEBPACK_IMPORTED_MODULE_1___default()('collapse-icon', {
+        ...iconClasses
+      }),
+      style: iconStyles
+    }, closeElement);
+  }
   return (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, iconName && (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_4__.BlockControls, null, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_5__.ToolbarGroup, null, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_5__.ToolbarButton, {
     onClick: () => setIconPopoverOpen(true)
   }, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('Change icon', 'themezee-accordion-block')))), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_4__.InspectorControls, null, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_5__.__experimentalToolsPanel, {
@@ -334,7 +357,7 @@ function Edit(_ref) {
       'vw': 20,
       'vh': 20
     }
-  }))))), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", blockProps, figure), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_components_icon_popover__WEBPACK_IMPORTED_MODULE_6__["default"], {
+  }))))), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", blockProps, figure, closeFigure), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_components_icon_popover__WEBPACK_IMPORTED_MODULE_6__["default"], {
     isIconPopoverOpen: isIconPopoverOpen,
     setIconPopoverOpen: setIconPopoverOpen,
     attributes: attributes,
@@ -530,6 +553,24 @@ const plusSquare = (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElem
 }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.Path, {
   d: "M64 32C28.7 32 0 60.7 0 96V416c0 35.3 28.7 64 64 64H384c35.3 0 64-28.7 64-64V96c0-35.3-28.7-64-64-64H64zM200 344V280H136c-13.3 0-24-10.7-24-24s10.7-24 24-24h64V168c0-13.3 10.7-24 24-24s24 10.7 24 24v64h64c13.3 0 24 10.7 24 24s-10.7 24-24 24H248v64c0 13.3-10.7 24-24 24s-24-10.7-24-24z"
 }));
+const minus = (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.SVG, {
+  xmlns: "http://www.w3.org/2000/svg",
+  viewBox: "0 0 448 512"
+}, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.Path, {
+  d: "M432 256c0 17.7-14.3 32-32 32L48 288c-17.7 0-32-14.3-32-32s14.3-32 32-32l352 0c17.7 0 32 14.3 32 32z"
+}));
+const minusCircle = (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.SVG, {
+  xmlns: "http://www.w3.org/2000/svg",
+  viewBox: "0 0 512 512"
+}, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.Path, {
+  d: "M256 512c141.4 0 256-114.6 256-256S397.4 0 256 0S0 114.6 0 256S114.6 512 256 512zM184 232H328c13.3 0 24 10.7 24 24s-10.7 24-24 24H184c-13.3 0-24-10.7-24-24s10.7-24 24-24z"
+}));
+const minusSquare = (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.SVG, {
+  xmlns: "http://www.w3.org/2000/svg",
+  viewBox: "0 0 448 512"
+}, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.Path, {
+  d: "M64 32C28.7 32 0 60.7 0 96V416c0 35.3 28.7 64 64 64H384c35.3 0 64-28.7 64-64V96c0-35.3-28.7-64-64-64H64zm88 200H296c13.3 0 24 10.7 24 24s-10.7 24-24 24H152c-13.3 0-24-10.7-24-24s10.7-24 24-24z"
+}));
 const squareCaretDown = (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.SVG, {
   xmlns: "http://www.w3.org/2000/svg",
   viewBox: "0 0 448 512"
@@ -646,15 +687,18 @@ const icons = [{
 }, {
   name: 'plus',
   svg: plus,
-  hover: 'flip'
+  hover: 'icon',
+  close: minus
 }, {
   name: 'plusCircle',
   svg: plusCircle,
-  hover: 'flip'
+  hover: 'icon',
+  close: minusCircle
 }, {
   name: 'plusSquare',
   svg: plusSquare,
-  hover: 'flip'
+  hover: 'icon',
+  close: minusSquare
 }, {
   name: 'squareCaretDown',
   svg: squareCaretDown,
@@ -739,10 +783,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var classnames__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! classnames */ "./node_modules/classnames/index.js");
 /* harmony import */ var classnames__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(classnames__WEBPACK_IMPORTED_MODULE_1__);
 /* harmony import */ var html_react_parser__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! html-react-parser */ "./node_modules/html-react-parser/index.mjs");
-/* harmony import */ var _wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @wordpress/i18n */ "@wordpress/i18n");
-/* harmony import */ var _wordpress_i18n__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__);
-/* harmony import */ var _wordpress_block_editor__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @wordpress/block-editor */ "@wordpress/block-editor");
-/* harmony import */ var _wordpress_block_editor__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_4__);
+/* harmony import */ var _wordpress_block_editor__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @wordpress/block-editor */ "@wordpress/block-editor");
+/* harmony import */ var _wordpress_block_editor__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_3__);
 
 /**
  * External dependencies
@@ -753,7 +795,6 @@ __webpack_require__.r(__webpack_exports__);
 /**
  * WordPress dependencies
  */
-
 
 
 /**
@@ -773,10 +814,11 @@ function save(_ref) {
     iconName,
     iconSVG,
     iconHover,
+    iconClose,
     iconWidth,
     iconHeight
   } = attributes;
-  const blockProps = _wordpress_block_editor__WEBPACK_IMPORTED_MODULE_4__.useBlockProps.save({
+  const blockProps = _wordpress_block_editor__WEBPACK_IMPORTED_MODULE_3__.useBlockProps.save({
     className: classnames__WEBPACK_IMPORTED_MODULE_1___default()({
       'is-hover-flip': iconHover === 'flip',
       'is-hover-rotate': iconHover === 'rotate',
@@ -796,11 +838,26 @@ function save(_ref) {
     trim: true
   }) : iconSVG;
   const figure = (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("figure", {
-    className: iconClasses,
-    style: iconStyles,
-    "aria-label": (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('Expand', 'themezee-accordion-block')
+    className: classnames__WEBPACK_IMPORTED_MODULE_1___default()('expand-icon', {
+      ...iconClasses
+    }),
+    style: iconStyles
   }, iconElement);
-  return (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", blockProps, figure);
+
+  // Add close icon if needed.
+  let closeFigure;
+  if (iconClose) {
+    const closeElement = typeof iconClose === 'string' ? (0,html_react_parser__WEBPACK_IMPORTED_MODULE_2__["default"])(iconClose, {
+      trim: true
+    }) : iconClose;
+    closeFigure = (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("figure", {
+      className: classnames__WEBPACK_IMPORTED_MODULE_1___default()('collapse-icon', {
+        ...iconClasses
+      }),
+      style: iconStyles
+    }, closeElement);
+  }
+  return (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", blockProps, figure, closeFigure);
 }
 
 /***/ }),
@@ -4528,7 +4585,7 @@ var Element = _index_js__WEBPACK_IMPORTED_MODULE_0__.Element;
 /***/ ((module) => {
 
 "use strict";
-module.exports = JSON.parse('{"$schema":"https://schemas.wp.org/trunk/block.json","apiVersion":2,"name":"themezee/accordion-icon","version":"1.0","title":"Accordion Icon","category":"themezee-blocks","parent":["themezee/accordion-heading"],"description":"Displays the accordion icon.","attributes":{"iconName":{"type":"string"},"iconSVG":{"type":"string","source":"html","selector":"figure","default":""},"iconHover":{"type":"string","default":"flip"},"iconWidth":{"type":"string","default":"24px"},"iconHeight":{"type":"string","default":"24px"}},"supports":{"align":false,"html":false,"color":{"gradients":true,"__experimentalDefaultControls":{"text":true,"background":true}},"spacing":{"margin":true,"padding":true,"__experimentalDefaultControls":{"padding":true}},"__experimentalBorder":{"color":true,"style":true,"width":true,"radius":true,"__experimentalDefaultControls":{"radius":true}}},"textdomain":"themezee-accordion-block","editorScript":"file:./index.js","editorStyle":"file:./index.css","style":"file:./style-index.css"}');
+module.exports = JSON.parse('{"$schema":"https://schemas.wp.org/trunk/block.json","apiVersion":2,"name":"themezee/accordion-icon","version":"1.0","title":"Accordion Icon","category":"themezee-blocks","parent":["themezee/accordion-heading"],"description":"Displays the accordion icon.","attributes":{"iconName":{"type":"string"},"iconSVG":{"type":"string","source":"html","selector":"figure.expand-icon","default":""},"iconHover":{"type":"string","default":"flip"},"iconClose":{"type":"string","source":"html","selector":"figure.collapse-icon","default":""},"iconWidth":{"type":"string","default":"24px"},"iconHeight":{"type":"string","default":"24px"}},"supports":{"align":false,"html":false,"color":{"gradients":true,"__experimentalDefaultControls":{"text":true,"background":true}},"spacing":{"margin":true,"padding":true,"__experimentalDefaultControls":{"padding":true}},"__experimentalBorder":{"color":true,"style":true,"width":true,"radius":true,"__experimentalDefaultControls":{"radius":true}}},"textdomain":"themezee-accordion-block","editorScript":"file:./index.js","editorStyle":"file:./index.css","style":"file:./style-index.css"}');
 
 /***/ })
 

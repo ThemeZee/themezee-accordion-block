@@ -16,12 +16,18 @@
     "iconSVG": {
       "type": "string",
       "source": "html",
-      "selector": "figure",
+      "selector": "figure.expand-icon",
       "default": ""
     },
     "iconHover": {
       "type": "string",
       "default": "flip"
+    },
+    "iconClose": {
+      "type": "string",
+      "source": "html",
+      "selector": "figure.collapse-icon",
+      "default": ""
     },
     "iconWidth": {
       "type": "string",

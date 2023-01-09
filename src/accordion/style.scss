@@ -1,5 +1,6 @@
 .wp-block-themezee-accordion {
-	.wp-block-themezee-accordion-content {
+	.wp-block-themezee-accordion-content,
+	.wp-block-themezee-accordion-icon.is-hover-icon .collapse-icon {
 		display: none;
 		overflow: hidden;
 	}
@@ -15,6 +16,17 @@
 
 		.wp-block-themezee-accordion-icon.is-hover-rotate figure {
 			transform: rotate(90deg);
+		}
+
+		.wp-block-themezee-accordion-icon.is-hover-icon {
+			.expand-icon {
+				display: none;
+				overflow: hidden;
+			}
+		
+			.collapse-icon {
+				display: block;
+			}
 		}
 	}
 }

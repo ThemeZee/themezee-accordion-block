@@ -1,7 +1,8 @@
 /*!*************************************************************************************************************************************************************************************************************************************************!*\
   !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[3].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[3].use[2]!./node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[3].use[3]!./src/accordion/style.scss ***!
   \*************************************************************************************************************************************************************************************************************************************************/
-.wp-block-themezee-accordion .wp-block-themezee-accordion-content {
+.wp-block-themezee-accordion .wp-block-themezee-accordion-content,
+.wp-block-themezee-accordion .wp-block-themezee-accordion-icon.is-hover-icon .collapse-icon {
   display: none;
   overflow: hidden;
 }
@@ -13,6 +14,13 @@
 }
 .wp-block-themezee-accordion.is-opened .wp-block-themezee-accordion-icon.is-hover-rotate figure {
   transform: rotate(90deg);
+}
+.wp-block-themezee-accordion.is-opened .wp-block-themezee-accordion-icon.is-hover-icon .expand-icon {
+  display: none;
+  overflow: hidden;
+}
+.wp-block-themezee-accordion.is-opened .wp-block-themezee-accordion-icon.is-hover-icon .collapse-icon {
+  display: block;
 }
 
 /*# sourceMappingURL=style-index.css.map*/
