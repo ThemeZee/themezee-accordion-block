@@ -78,9 +78,11 @@ __webpack_require__.r(__webpack_exports__);
 
 const icon = (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_2__.SVG, {
   xmlns: "http://www.w3.org/2000/svg",
-  viewBox: "0 0 48 48"
+  viewBox: "0 0 24 24"
 }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_2__.Path, {
-  d: "m33.4 31 8.6-7.4 4.25.35-9.45 8.1 2.85 12.3-3.7-2.25Zm-4.65-14.45-2.85-6.7L27.5 6l4.6 10.85Zm-15.6 21.2 7.85-4.7 7.85 4.75-2.1-8.9 6.9-6-9.1-.8L21 13.7l-3.55 8.35-9.1.8 6.9 6ZM8.65 44l3.25-14.05L1 20.5l14.4-1.25L21 6l5.6 13.25L41 20.5l-10.9 9.45L33.35 44 21 36.55ZM21 26.75Z"
+  d: "M19,5v14H5V5H19 M19,3H5C3.9,3,3,3.9,3,5v14c0,1.1,0.9,2,2,2h14c1.1,0,2-0.9,2-2V5C21,3.9,20.1,3,19,3L19,3z"
+}), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_2__.Path, {
+  d: "M14,17H7v-2h7V17z M17,13H7v-2h10V13z M17,9H7V7h10V9z"
 }));
 
 /**
