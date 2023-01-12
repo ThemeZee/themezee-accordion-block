@@ -203,7 +203,7 @@ module.exports = window["wp"]["i18n"];
   \******************************************/
 /***/ ((module) => {
 
-module.exports = JSON.parse('{"$schema":"https://schemas.wp.org/trunk/block.json","apiVersion":2,"name":"themezee/accordion-content","version":"1.0","title":"Accordion Content","category":"themezee-blocks","parent":["themezee/accordion"],"description":"Displays the accordion content.","supports":{"align":false,"color":{"gradients":true,"link":true,"__experimentalDefaultControls":{"text":true,"background":true,"link":false}},"spacing":{"margin":true,"padding":true,"blockGap":true,"__experimentalDefaultControls":{"padding":true}},"__experimentalBorder":{"color":true,"style":true,"width":true,"radius":true}},"textdomain":"themezee-accordion-block","editorScript":"file:./index.js","editorStyle":"file:./index.css","style":"file:./style-index.css"}');
+module.exports = JSON.parse('{"$schema":"https://schemas.wp.org/trunk/block.json","apiVersion":2,"name":"themezee/accordion-content","version":"1.0","title":"Accordion Content","category":"themezee-blocks","parent":["themezee/accordion"],"description":"Displays the accordion content.","supports":{"align":false,"color":{"gradients":true,"link":true,"__experimentalDefaultControls":{"text":true,"background":true,"link":false}},"spacing":{"margin":true,"padding":true,"__experimentalDefaultControls":{"padding":true}},"__experimentalBorder":{"color":true,"style":true,"width":true,"radius":true}},"textdomain":"themezee-accordion-block","editorScript":"file:./index.js","editorStyle":"file:./index.css","style":"file:./style-index.css"}');
 
 /***/ })
 

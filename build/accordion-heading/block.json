@@ -37,6 +37,7 @@
       "padding": true,
       "blockGap": true,
       "__experimentalDefaultControls": {
+        "padding": true,
         "blockGap": true
       }
     },

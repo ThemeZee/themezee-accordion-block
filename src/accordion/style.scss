@@ -1,4 +1,8 @@
 .wp-block-themezee-accordion {
+	&.has-background {
+		padding: 1.5rem;
+	}
+
 	.wp-block-themezee-accordion-content,
 	.wp-block-themezee-accordion-icon.is-hover-icon .collapse-icon {
 		display: none;
