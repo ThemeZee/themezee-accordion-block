@@ -1,4 +1,16 @@
 /*!**************************************************************************************************************************************************************************************************************************************************!*\
   !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[3].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[3].use[2]!./node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[3].use[3]!./src/accordion/editor.scss ***!
   \**************************************************************************************************************************************************************************************************************************************************/
+/* Disable open / collapsed state for accordion icon in editor since it is confusing */
+.editor-styles-wrapper .wp-block-themezee-accordion.is-opened .wp-block-themezee-accordion-icon.is-hover-flip figure,
+.editor-styles-wrapper .wp-block-themezee-accordion.is-opened .wp-block-themezee-accordion-icon.is-hover-rotate figure {
+  transform: none;
+}
+.editor-styles-wrapper .wp-block-themezee-accordion.is-opened .wp-block-themezee-accordion-icon.is-hover-icon .expand-icon {
+  display: block;
+}
+.editor-styles-wrapper .wp-block-themezee-accordion.is-opened .wp-block-themezee-accordion-icon.is-hover-icon .collapse-icon {
+  display: none;
+}
 
+/*# sourceMappingURL=index.css.map*/

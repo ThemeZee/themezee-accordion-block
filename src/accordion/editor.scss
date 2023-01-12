@@ -1,0 +1,20 @@
+
+/* Disable open / collapsed state for accordion icon in editor since it is confusing */
+.editor-styles-wrapper .wp-block-themezee-accordion {
+	&.is-opened {
+		.wp-block-themezee-accordion-icon.is-hover-flip figure,
+		.wp-block-themezee-accordion-icon.is-hover-rotate figure {
+			transform: none;
+		}
+
+		.wp-block-themezee-accordion-icon.is-hover-icon {
+			.expand-icon {
+				display: block;
+			}
+
+			.collapse-icon {
+				display: none;
+			}
+		}
+	}
+}
