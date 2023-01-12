@@ -1,0 +1,15 @@
+.wp-block-themezee-accordion-content {
+	margin-top: var(--wp--style--block-gap);
+
+	> *:first-child {
+		margin-top: 0;
+	}
+
+	> *:last-child {
+		margin-bottom: 0;
+	}
+
+	&.has-background {
+		padding: 1.5rem;
+	}
+}
