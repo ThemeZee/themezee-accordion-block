@@ -8,6 +8,7 @@
 	"description": "Display multiple accordion blocks in a group.",
 	"supports": {
 		"align": ["wide", "full"],
+		"anchor": true,
 		"color": {
 			"gradients": true,
 			"link": true,
@@ -29,6 +30,9 @@
 			"style": true,
 			"width": true,
 			"radius": true
+		},
+		"__experimentalLayout": {
+			"allowSizingOnChildren": true
 		}
 	},
 	"textdomain": "themezee-accordion-block",

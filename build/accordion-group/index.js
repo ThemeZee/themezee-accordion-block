@@ -30,21 +30,29 @@ __webpack_require__.r(__webpack_exports__);
  * Internal dependencies
  */
 
+const blockName = 'themezee/accordion';
+const ALLOWED_BLOCKS = [blockName];
+const DEFAULT_BLOCK = {
+  name: blockName,
+  attributesToCopy: ['backgroundColor', 'border', 'borderColor', 'className', 'gradient', 'style', 'textColor']
+};
 function Edit(_ref) {
   let {
     attributes
   } = _ref;
+  const {
+    layout = {}
+  } = attributes;
   const blockProps = (0,_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.useBlockProps)();
   const innerBlocksProps = (0,_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.useInnerBlocksProps)(blockProps, {
-    template: [['themezee/accordion', {
-      openedByDefault: true
-    }], ['themezee/accordion', {
-      openedByDefault: false
-    }], ['themezee/accordion', {
-      openedByDefault: false
-    }]]
+    allowedBlocks: ALLOWED_BLOCKS,
+    __experimentalDefaultBlock: DEFAULT_BLOCK,
+    __experimentalDirectInsert: true,
+    template: [[blockName, {}]],
+    __experimentalLayout: layout,
+    templateInsertUpdatesSelection: true
   });
-  return (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", innerBlocksProps, innerBlocksProps.children));
+  return (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", innerBlocksProps);
 }
 
 /***/ }),
@@ -207,7 +215,7 @@ module.exports = window["wp"]["i18n"];
   \****************************************/
 /***/ ((module) => {
 
-module.exports = JSON.parse('{"$schema":"https://schemas.wp.org/trunk/block.json","apiVersion":2,"name":"themezee/accordion-group","version":"1.0","title":"Accordion Group","category":"themezee-blocks","description":"Display multiple accordion blocks in a group.","supports":{"align":["wide","full"],"color":{"gradients":true,"link":true,"__experimentalDefaultControls":{"text":true,"background":true,"link":false}},"spacing":{"margin":true,"padding":true,"__experimentalDefaultControls":{"padding":true}},"__experimentalBorder":{"color":true,"style":true,"width":true,"radius":true}},"textdomain":"themezee-accordion-block","editorScript":"file:./index.js","editorStyle":"file:./index.css","style":"file:./style-index.css"}');
+module.exports = JSON.parse('{"$schema":"https://schemas.wp.org/trunk/block.json","apiVersion":2,"name":"themezee/accordion-group","version":"1.0","title":"Accordion Group","category":"themezee-blocks","description":"Display multiple accordion blocks in a group.","supports":{"align":["wide","full"],"anchor":true,"color":{"gradients":true,"link":true,"__experimentalDefaultControls":{"text":true,"background":true,"link":false}},"spacing":{"margin":true,"padding":true,"__experimentalDefaultControls":{"padding":true}},"__experimentalBorder":{"color":true,"style":true,"width":true,"radius":true},"__experimentalLayout":{"allowSizingOnChildren":true}},"textdomain":"themezee-accordion-block","editorScript":"file:./index.js","editorStyle":"file:./index.css","style":"file:./style-index.css"}');
 
 /***/ })
 

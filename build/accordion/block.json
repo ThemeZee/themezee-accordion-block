@@ -17,6 +17,7 @@
       "wide",
       "full"
     ],
+    "anchor": true,
     "color": {
       "gradients": true,
       "link": true,

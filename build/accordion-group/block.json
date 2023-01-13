@@ -11,6 +11,7 @@
       "wide",
       "full"
     ],
+    "anchor": true,
     "color": {
       "gradients": true,
       "link": true,
@@ -32,6 +33,9 @@
       "style": true,
       "width": true,
       "radius": true
+    },
+    "__experimentalLayout": {
+      "allowSizingOnChildren": true
     }
   },
   "textdomain": "themezee-accordion-block",
