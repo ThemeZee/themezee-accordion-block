@@ -1,17 +1,11 @@
 {
   "$schema": "https://schemas.wp.org/trunk/block.json",
   "apiVersion": 2,
-  "name": "themezee/accordion",
+  "name": "themezee/accordion-group",
   "version": "1.0",
-  "title": "Accordion",
+  "title": "Accordion Group",
   "category": "themezee-blocks",
-  "description": "Create a single accordion.",
-  "attributes": {
-    "openedByDefault": {
-      "type": "boolean",
-      "default": false
-    }
-  },
+  "description": "Display multiple accordion blocks in a group.",
   "supports": {
     "align": [
       "wide",
@@ -37,18 +31,11 @@
       "color": true,
       "style": true,
       "width": true,
-      "radius": true,
-      "__experimentalDefaultControls": {
-        "color": true,
-        "style": true,
-        "width": true,
-        "radius": true
-      }
+      "radius": true
     }
   },
   "textdomain": "themezee-accordion-block",
   "editorScript": "file:./index.js",
-  "viewScript": "file:./frontend.js",
   "editorStyle": "file:./index.css",
   "style": "file:./style-index.css"
 }

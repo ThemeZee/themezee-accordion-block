@@ -1,0 +1,1 @@
+{"version":3,"file":"accordion-group/style-index.css","mappings":";;;AACC;EACC;AAAF,C","sources":["webpack://themezee-accordion-block/./src/accordion-group/style.scss"],"sourcesContent":[".wp-block-themezee-accordion-group {\n\t&.has-background {\n\t\tpadding: 1.5rem;\n\t}\n}\n"],"names":[],"sourceRoot":""}

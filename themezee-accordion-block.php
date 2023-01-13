@@ -26,9 +26,14 @@ function register_themezee_accordion_block() {
 	load_plugin_textdomain( 'themezee-accordion-block', false, dirname( plugin_basename( __FILE__ ) ) . '/languages/' );
 
 	// Register blocks.
+	register_block_type( __DIR__ . '/build/accordion-group', [
+		'title'       => _x( 'Accordion Group', 'block title', 'themezee-accordion-block' ),
+		'description' => _x( 'Display multiple accordion blocks in a group.', 'block description', 'themezee-accordion-block' ),
+	] );
+
 	register_block_type( __DIR__ . '/build/accordion', [
 		'title'       => _x( 'Accordion', 'block title', 'themezee-accordion-block' ),
-		'description' => _x( 'Create an accordion section.', 'block description', 'themezee-accordion-block' ),
+		'description' => _x( 'Create a single accordion.', 'block description', 'themezee-accordion-block' ),
 	] );
 
 	register_block_type( __DIR__ . '/build/accordion-heading', [
@@ -47,6 +52,7 @@ function register_themezee_accordion_block() {
 	] );
 
 	// Load translation for JS files.
+	wp_set_script_translations( 'themezee-accordion-group-editor-script', 'themezee-accordion-block', plugin_dir_path( __FILE__ ) . 'languages' );
 	wp_set_script_translations( 'themezee-accordion-editor-script', 'themezee-accordion-block', plugin_dir_path( __FILE__ ) . 'languages' );
 	wp_set_script_translations( 'themezee-accordion-heading-editor-script', 'themezee-accordion-block', plugin_dir_path( __FILE__ ) . 'languages' );
 	wp_set_script_translations( 'themezee-accordion-icon-editor-script', 'themezee-accordion-block', plugin_dir_path( __FILE__ ) . 'languages' );
