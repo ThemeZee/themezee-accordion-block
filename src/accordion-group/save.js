@@ -1,11 +1,29 @@
 /**
+ * External dependencies
+ */
+import classnames from 'classnames';
+
+/**
  * WordPress dependencies
  */
-import { InnerBlocks, useBlockProps } from '@wordpress/block-editor';
+import {
+	InnerBlocks,
+	useBlockProps,
+} from '@wordpress/block-editor';
 
-export default function save() {
+export default function save( { attributes } ) {
+	const {
+		autoClose,
+	} = attributes;
+
+	const blockProps = useBlockProps.save( {
+		className: classnames( {
+			'is-auto-close': autoClose,
+		} ),
+	} );
+
 	return (
-		<div { ...useBlockProps.save() }>
+		<div { ...blockProps }>
 			<InnerBlocks.Content />
 		</div>
 	);

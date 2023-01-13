@@ -1,11 +1,21 @@
 /**
+ * External dependencies
+ */
+import classnames from 'classnames';
+
+/**
  * WordPress dependencies
  */
 import { __ } from '@wordpress/i18n';
 import {
+	InspectorControls,
 	useBlockProps,
 	useInnerBlocksProps,
 } from '@wordpress/block-editor';
+import {
+	PanelBody,
+	ToggleControl,
+} from '@wordpress/components';
 
 /**
  * Internal dependencies
@@ -28,9 +38,20 @@ const DEFAULT_BLOCK = {
 	],
 };
 
-export default function Edit( { attributes } ) {
-	const { layout = {} } = attributes;
-	const blockProps = useBlockProps();
+export default function Edit( {
+	attributes,
+	setAttributes,
+} ) {
+	const {
+		autoClose,
+		layout = {},
+	} = attributes;
+
+	const blockProps = useBlockProps( {
+		className: classnames( {
+			'is-auto-close': autoClose,
+		} ),
+	} );
 
 	const innerBlocksProps = useInnerBlocksProps( blockProps, {
 		allowedBlocks: ALLOWED_BLOCKS,
@@ -46,5 +67,22 @@ export default function Edit( { attributes } ) {
 		templateInsertUpdatesSelection: true,
 	} );
 
-	return <div { ...innerBlocksProps } />;
+	return (
+		<>
+			<InspectorControls>
+				<PanelBody title={ __( 'Settings', 'themezee-accordion-block' ) } initialOpen={ true }>
+					<ToggleControl
+						label={ __( 'Automatically close accordions', 'themezee-accordion-block' ) }
+						help={ __( 'Enable this option to collapse all accordion blocks in this group if another accordion is opened.', 'themezee-accordion-block' ) }
+						checked={ autoClose }
+						onChange={ () => setAttributes( { autoClose: ! autoClose } ) }
+					/>
+				</PanelBody>
+			</InspectorControls>
+
+			<div { ...innerBlocksProps }>
+				{ innerBlocksProps.children }
+			</div>
+		</>
+	);
 }

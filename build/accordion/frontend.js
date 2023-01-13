@@ -28,9 +28,9 @@ var __webpack_exports__ = {};
         header.setAttribute('aria-expanded', accordion.classList.contains('is-opened'));
 
         // Check if accordion was openend and is in a accordion group with auto-close enabled.
-        if (accordion.classList.contains('is-opened') && accordion.closest('.test-accordion-group-block')) {
+        if (accordion.classList.contains('is-opened') && accordion.closest('.wp-block-themezee-accordion-group.is-auto-close')) {
           // Get siblings by finding all accordion blocks in the group and then filter out the clicked one. 
-          const siblings = [...accordion.closest('.test-accordion-group-block').querySelectorAll('.wp-block-themezee-accordion')].filter(el => el !== accordion);
+          const siblings = [...accordion.closest('.wp-block-themezee-accordion-group.is-auto-close').querySelectorAll('.wp-block-themezee-accordion')].filter(el => el !== accordion);
 
           // Close all sibling blocks.
           siblings.forEach(accordion => {

@@ -6,6 +6,12 @@
   "title": "Accordion Group",
   "category": "themezee-blocks",
   "description": "Display multiple accordion blocks in a group.",
+  "attributes": {
+    "autoClose": {
+      "type": "boolean",
+      "default": true
+    }
+  },
   "supports": {
     "align": [
       "wide",
