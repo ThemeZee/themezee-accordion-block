@@ -23,7 +23,7 @@ const icon = (
  * Every block starts by registering a new block type definition.
  *
  * @see https://developer.wordpress.org/block-editor/reference-guides/block-api/block-registration/
- */
+ * @ts-ignore */
 registerBlockType( metadata.name, {
 	icon,
 	edit,

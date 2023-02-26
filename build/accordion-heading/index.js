@@ -2,10 +2,10 @@
 /******/ 	"use strict";
 /******/ 	var __webpack_modules__ = ({
 
-/***/ "./src/accordion-heading/edit.js":
-/*!***************************************!*\
-  !*** ./src/accordion-heading/edit.js ***!
-  \***************************************/
+/***/ "./src/accordion-heading/edit.tsx":
+/*!****************************************!*\
+  !*** ./src/accordion-heading/edit.tsx ***!
+  \****************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 __webpack_require__.r(__webpack_exports__);
@@ -66,10 +66,10 @@ function Edit(_ref) {
 
 /***/ }),
 
-/***/ "./src/accordion-heading/index.js":
-/*!****************************************!*\
-  !*** ./src/accordion-heading/index.js ***!
-  \****************************************/
+/***/ "./src/accordion-heading/index.tsx":
+/*!*****************************************!*\
+  !*** ./src/accordion-heading/index.tsx ***!
+  \*****************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 __webpack_require__.r(__webpack_exports__);
@@ -79,8 +79,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _wordpress_blocks__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_wordpress_blocks__WEBPACK_IMPORTED_MODULE_1__);
 /* harmony import */ var _wordpress_components__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @wordpress/components */ "@wordpress/components");
 /* harmony import */ var _wordpress_components__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_wordpress_components__WEBPACK_IMPORTED_MODULE_2__);
-/* harmony import */ var _edit__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./edit */ "./src/accordion-heading/edit.js");
-/* harmony import */ var _save__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./save */ "./src/accordion-heading/save.js");
+/* harmony import */ var _edit__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./edit */ "./src/accordion-heading/edit.tsx");
+/* harmony import */ var _save__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./save */ "./src/accordion-heading/save.tsx");
 /* harmony import */ var _block_json__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./block.json */ "./src/accordion-heading/block.json");
 /* harmony import */ var _style_scss__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./style.scss */ "./src/accordion-heading/style.scss");
 
@@ -111,7 +111,7 @@ const icon = (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_
  * Every block starts by registering a new block type definition.
  *
  * @see https://developer.wordpress.org/block-editor/reference-guides/block-api/block-registration/
- */
+ * @ts-ignore */
 (0,_wordpress_blocks__WEBPACK_IMPORTED_MODULE_1__.registerBlockType)(_block_json__WEBPACK_IMPORTED_MODULE_5__.name, {
   icon,
   edit: _edit__WEBPACK_IMPORTED_MODULE_3__["default"],
@@ -120,10 +120,10 @@ const icon = (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_
 
 /***/ }),
 
-/***/ "./src/accordion-heading/save.js":
-/*!***************************************!*\
-  !*** ./src/accordion-heading/save.js ***!
-  \***************************************/
+/***/ "./src/accordion-heading/save.tsx":
+/*!****************************************!*\
+  !*** ./src/accordion-heading/save.tsx ***!
+  \****************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 __webpack_require__.r(__webpack_exports__);
@@ -226,7 +226,7 @@ module.exports = window["wp"]["i18n"];
   \******************************************/
 /***/ ((module) => {
 
-module.exports = JSON.parse('{"$schema":"https://schemas.wp.org/trunk/block.json","apiVersion":2,"name":"themezee/accordion-heading","version":"1.0","title":"Accordion Heading","category":"themezee-blocks","parent":["themezee/accordion"],"description":"Displays the accordion heading.","supports":{"align":false,"__experimentalExposeControlsToChildren":true,"__experimentalLayout":{"allowSwitching":false,"allowInheriting":false,"default":{"type":"flex","flexWrap":"nowrap"}},"color":{"gradients":true,"link":true,"__experimentalDefaultControls":{"text":true,"background":true,"link":false}},"spacing":{"margin":["top","bottom"],"padding":true,"blockGap":true,"__experimentalDefaultControls":{"padding":true,"blockGap":true}},"__experimentalBorder":{"color":true,"style":true,"width":true,"radius":true}},"textdomain":"themezee-accordion-block","editorScript":"file:./index.js","editorStyle":"file:./index.css","style":"file:./style-index.css"}');
+module.exports = JSON.parse('{"$schema":"https://schemas.wp.org/trunk/block.json","apiVersion":2,"name":"themezee/accordion-heading","version":"1.0","title":"Accordion Heading","category":"themezee-blocks","parent":["themezee/accordion"],"description":"Displays the accordion heading.","supports":{"align":false,"__experimentalExposeControlsToChildren":true,"__experimentalLayout":{"allowSwitching":false,"allowInheriting":false,"default":{"type":"flex","flexWrap":"nowrap"}},"color":{"gradients":true,"link":true,"__experimentalDefaultControls":{"text":true,"background":true,"link":false}},"spacing":{"margin":["top","bottom"],"padding":true,"blockGap":true,"__experimentalDefaultControls":{"padding":true,"blockGap":true}},"__experimentalBorder":{"color":true,"style":true,"width":true,"radius":true}},"textdomain":"themezee-accordion-block","editorScript":"file:./index.tsx","editorStyle":"file:./index.css","style":"file:./style-index.css"}');
 
 /***/ })
 
@@ -391,7 +391,7 @@ module.exports = JSON.parse('{"$schema":"https://schemas.wp.org/trunk/block.json
 /******/ 	// startup
 /******/ 	// Load entry module and return exports
 /******/ 	// This entry module depends on other loaded chunks and execution need to be delayed
-/******/ 	var __webpack_exports__ = __webpack_require__.O(undefined, ["accordion-heading/style-index"], () => (__webpack_require__("./src/accordion-heading/index.js")))
+/******/ 	var __webpack_exports__ = __webpack_require__.O(undefined, ["accordion-heading/style-index"], () => (__webpack_require__("./src/accordion-heading/index.tsx")))
 /******/ 	__webpack_exports__ = __webpack_require__.O(__webpack_exports__);
 /******/ 	
 /******/ })()

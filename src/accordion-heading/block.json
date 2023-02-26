@@ -44,7 +44,7 @@
 		}
 	},
 	"textdomain": "themezee-accordion-block",
-	"editorScript": "file:./index.js",
+	"editorScript": "file:./index.tsx",
 	"editorStyle": "file:./index.css",
 	"style": "file:./style-index.css"
 }
